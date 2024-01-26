@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>registration form</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+        <link rel="stylesheet" href="/static/style.css">
+    </head>
+    <body>
+        <h1> Registration Form</h1>
+       <div class = 'media'>
+        <img class ='article-image' src='/static//logo.jpg'>
+       </div>  
+       {%if message%}
+        <p class='message'>{{message|safe}}</p>
+       {% endif %}
+       <form  method = 'POST'>
+        <fieldset>
+        <legend>Parent/guardian details</legend><br>
+        <br>
+        <br>
+        <input name="username" type="text" placeholder='Name'>
+        <br>
+        <br>
+        <input name="Address" type="text"placeholder='Home Address'>
+        <br>
+        <br>
+        <input name="contact_details" type="number" placeholder='contactdetails'>
+        <br>
+        <br>
+        <input name="EmailAddress" type="Email" placeholder='Email Address'>
+        <br>
+        <br>
+        <input name="Occupation" type="text" placeholder='Occupation'>
+        <br>
+        </fieldset>
+      </form> 
+      <form action='/submit' method='POST'>
+        <fieldset>
+            <legend>Child's information</legend>
+            <br>
+            <br>
+            <input name="name" type="text"placeholder='Name'>
+            <br>
+            <br>
+            <input name="id_number" type="number" placeholder='id/passport number'>
+            <br>
+            <br>
+            <input name="Contact_details" type="number" placeholder='Contact Details'>
+            <br>
+            <br>
+            <input name="Grade" type="number" placeholder='Grade'>
+            <br>
+            <br>
+                <div class="btn-group mb-3">
+                    <button type="button" class="btn">Choose Subjects</button>
+                    <button type="button" class="btn btn-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+                      <span class="visually-hidden">choose subjects</span>
+                    </button>
+                    <ol class="dropdown-menu">
+                <div class="form-check">
+                     <input class="form-check-input" type="checkbox" value="1" id="flexCheckIndeterminate">
+                     <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                    Isizulu First Additional Language
+                <div class="form-check">
+                     <input class="form-check-input" type="checkbox" value="2" id="flexCheckIndeterminate">
+                     <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                      Afrikaans First Additional Language
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="3" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                       Mathematics
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="4" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                       Mathematical Literacy
+                   <div class="form-check">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                       <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                        Tourism
+                   <div class="form-check">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                       <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                        Accounting
+                   <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckdeterminate">
+                        <label class="form-check-label" for="flexCheckdeterminate"></label>
+                        English Home Language 
+                   <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                        <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                        Economics
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                         Business Studies
+                   <div class="form-check">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                       <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                        Physical Sciences 
+                        <br>
+                   <div class="form-check">
+                       <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                       <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                        Life Siences
+                        <br>
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                      History
+                      <br>
+                   <div class="form-check">
+                      <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate">
+                      <label class="form-check-label" for="flexCheckIndeterminate"></label>
+                      Geography
+                      <br>
+                 </ol>
+                </div>
+                <br>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button> 
+        </fieldset>
+      </form>
+      </div>
+        <script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+        </script>
+    </body>
+</html>
